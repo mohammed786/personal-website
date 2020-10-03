@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'Aditya Ketkar | Personal Webpage',
-    author: 'Aditya Ketkar',
-    description: 'A Gatsby.js V2 Starter based on Dimension by HTML5 UP',
+    title: 'Mohammed Modi | Personal Webpage',
+    author: 'Mohammed Modi',
+    description: 'I am frontend engineer and worked on most of the JavaScript framework including ReactJS, NodeJs, Angular 2+ etc.',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
