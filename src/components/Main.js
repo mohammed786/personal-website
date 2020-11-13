@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import JSONData from "../content/mycontent.json"
+import JSONData from '../content/mycontent.json'
 
 class Main extends React.Component {
   render() {
@@ -30,13 +30,18 @@ class Main extends React.Component {
         >
           <h2 className="major">About Me</h2>
           <span className="image main">
-            <div >
+            <div>
               <img src={JSONData.AboutImage} alt="" />
             </div>
           </span>
           {/* <p> */}
-          {JSONData.AboutContent.map((item) => {
-            return (<div><br/>{item}</div>)
+          {JSONData.AboutContent.map(item => {
+            return (
+              <div>
+                <br />
+                {item}
+              </div>
+            )
           })}
           {/* </p> */}
           {/* not visible in gatsby build */}
@@ -58,21 +63,32 @@ class Main extends React.Component {
             <img src={JSONData.WorkImage} alt="" />
           </span>
 
-            {JSONData.WorkContent}
-            <br/><br/>
-            {JSONData.InternshipsStartLine}
-            <ul>
-              {JSONData.InternShips.map((item) => {
-              return (<li><a href={item.link}>{item.name}</a><br/></li>)
+          {JSONData.WorkContent}
+          <br />
+          <br />
+          {JSONData.InternshipsStartLine}
+          <ul>
+            {JSONData.InternShips.map(item => {
+              return (
+                <li>
+                  <a href={item.link}>{item.name}</a>
+                  <br />
+                </li>
+              )
             })}
-            </ul>
-            {JSONData.ProjectsStartLine}
-            <ul>
-              {JSONData.Projects.map((item) => {
-              return (<li><a href={item.link}>{item.name}</a><br/></li>)
+          </ul>
+          {JSONData.ProjectsStartLine}
+          <ul>
+            {JSONData.Projects.map(item => {
+              return (
+                <li>
+                  <a href={item.link}>{item.name}</a>
+                  <br />
+                </li>
+              )
             })}
-            </ul>
-          
+          </ul>
+
           {/* not visible in gatsby build */}
           {close}
           {/* <div style={closeStyle} onClick={() => this.props.onCloseArticle()}>
@@ -92,12 +108,12 @@ class Main extends React.Component {
             <img  />
           </span> */}
           {/* <p> */}
-            {JSONData.CVStartLine}
-            <br/><br/>
-            <div style={{"display":"flex", "justifyContent":"space-around"}}>
-              <a href={JSONData.CV} >CV </a>
-              <a href={JSONData.Resume} >Resume</a>
-            </div>
+          {JSONData.CVStartLine}
+          <br />
+          <br />
+          <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+            <a href={JSONData.Resume}>Resume</a>
+          </div>
           {/* </p> */}
           {/* not visible in gatsby build */}
           {close}
@@ -143,26 +159,17 @@ class Main extends React.Component {
               </a>
             </li>
             <li>
-              <a
-                href={JSONData.github}
-                className="icon fa-github"
-              >
+              <a href={JSONData.github} className="icon fa-github">
                 <span className="label">GitHub</span>
               </a>
             </li>
             <li>
-              <a
-                href={JSONData.linkedin}
-                className="icon fa-linkedin"
-              >
+              <a href={JSONData.linkedin} className="icon fa-linkedin">
                 <span className="label">Linkedin</span>
               </a>
             </li>
             <li>
-              <a
-                href={JSONData.blog}
-                className="icon fa-rss"
-              >
+              <a href={JSONData.blog} className="icon fa-rss">
                 <span className="label">Blog</span>
               </a>
             </li>

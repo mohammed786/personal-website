@@ -65,9 +65,9 @@ This project is a FREE, EASY and CUSTOMIZABLE webpage template, made to deploy w
 ## Getting Started
 
 A webinar with walkthrough of this project is available [here](https://www.youtube.com/watch?v=N9UHOJvtj3E).
-The whole tutorial is available in **video format** [here](http://www.youtube.com/watch?v=3A3OzXXQDug) : 
+The whole tutorial is available in **video format** [here](https://www.youtube.com/watch?v=3A3OzXXQDug) : 
 
-[![Walkthrough](http://img.youtube.com/vi/3A3OzXXQDug/0.jpg)](http://www.youtube.com/watch?v=3A3OzXXQDug)
+[![Walkthrough](https://img.youtube.com/vi/3A3OzXXQDug/0.jpg)](https://www.youtube.com/watch?v=3A3OzXXQDug)
 
 
 If you just want to use the template, no need to clone/download this repo. The following steps show how to launch your own website : 

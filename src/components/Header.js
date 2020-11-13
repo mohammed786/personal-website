@@ -1,23 +1,32 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import JSONData from "../content/mycontent.json"
-
+import JSONData from '../content/mycontent.json'
 
 const Header = props => (
   <header id="header" style={props.timeout ? { display: 'none' } : {}}>
     <div className="logo backdrop-blur">
-      <img src={JSONData.MainImage} style={{"maxWidth": "100%",
-        "maxHeight": "100%",
-        "display": "block",
-        "borderRadius": "50%"
-}}></img>
+      <img
+        src={JSONData.MainImage}
+        style={{
+          maxWidth: '100%',
+          maxHeight: '100%',
+          display: 'block',
+          borderRadius: '50%',
+        }}
+        alt={'mohammed modi'}
+      />
     </div>
     <div className="content backdrop-blur">
       <div className="inner backdrop-blur">
         <h1>{JSONData.Name}</h1>
         <p>
-          {JSONData.Description.map((item) => {
-            return (<div><br/>{item}</div>)
+          {JSONData.Description.map(item => {
+            return (
+              <div>
+                <br />
+                {item}
+              </div>
+            )
           })}
         </p>
       </div>
