@@ -5,7 +5,7 @@
     "Working in LoginRadius Inc as a Software Engineer. Passionate about Coding.",
     "I grab every chance I get to travel, learn and create."
   ],
-  "MainImage": "https://i.imgur.com/EfRnMm4.png",
+  "MainImage": "/profile.png",
   "BackgroundURL": "",
 
   "AboutContent": [
@@ -17,7 +17,7 @@
   "WorkContent": [
     "I am currently full time Software Engineer - Frontend at LoginRadius Inc."
   ],
-  "WorkImage": "https://i.imgur.com/rGgWvSl.png",
+  "WorkImage": "/loginradius.png",
   "InternshipsStartLine": "Previously, I have worked with :",
   "InternShips": [
     {

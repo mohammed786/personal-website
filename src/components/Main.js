@@ -3,6 +3,12 @@ import React from 'react'
 import JSONData from '../content/mycontent.json'
 
 class Main extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      form: { name: '', email: '', body: '' },
+    }
+  }
   render() {
     let close = (
       <div
@@ -13,7 +19,12 @@ class Main extends React.Component {
       ></div>
     )
 
-    // let closeStyle = {"display":"inline-block","position":"absolute", "top":"0px", "right":"0px", "margin-right":"3%","margin-top":"3%", "cursor":"pointer"};
+    const form = { ...this.state.form }
+
+    const mailToLink = encodeURI(
+      `${JSONData.emailid}?subject=Message from - ${form.name ||
+        ''}, ${form.email || ''}&body=${form.body || ''}`
+    )
 
     return (
       <div
@@ -130,28 +141,46 @@ class Main extends React.Component {
           style={{ display: 'none' }}
         >
           <h2 className="major">Contact</h2>
-          <form method="post" action={JSONData.emailid} type="text/plain">
-            <div className="field half first">
-              <label htmlFor="name">Name</label>
-              <input type="text" name="name" id="name" />
-            </div>
-            <div className="field half">
-              <label htmlFor="email">Email</label>
-              <input type="email" name="email" id="email" />
-            </div>
-            <div className="field">
-              <label htmlFor="message">Message</label>
-              <textarea name="message" id="message" rows="4"></textarea>
-            </div>
-            <ul className="actions">
-              <li>
-                <input type="submit" value="Send Message" className="special" />
-              </li>
-              <li>
-                <input type="reset" value="Reset" />
-              </li>
-            </ul>
-          </form>
+          <div className="field half first">
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              value={form.name}
+              onChange={e => this._onFormChange('name', e.target.value)}
+            />
+          </div>
+          <div className="field half">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              id="email"
+              value={form.email}
+              onChange={e => this._onFormChange('email', e.target.value)}
+            />
+          </div>
+          <div className="field">
+            <label htmlFor="message">Message</label>
+            <textarea
+              name="message"
+              id="message"
+              rows="4"
+              value={form.body}
+              onChange={e => this._onFormChange('body', e.target.value)}
+            ></textarea>
+          </div>
+          <ul className="actions">
+            <li>
+              <a target="_top" href={mailToLink}>
+                Send Message
+              </a>
+            </li>
+            <li>
+              <button onClick={this._resetForm}>Reset </button>
+            </li>
+          </ul>
           <ul className="icons">
             <li>
               <a href={JSONData.medium} className="icon fa-medium">
@@ -182,6 +211,20 @@ class Main extends React.Component {
         </article>
       </div>
     )
+  }
+
+  _onFormChange = (key, value) => {
+    const form = { ...this.state.form }
+    form[key] = value
+    this.setState({
+      form,
+    })
+  }
+
+  _resetForm = () => {
+    this.setState({
+      form: { name: '', email: '', body: '' },
+    })
   }
 }
 
