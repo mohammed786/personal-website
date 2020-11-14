@@ -173,12 +173,17 @@ class Main extends React.Component {
           </div>
           <ul className="actions">
             <li>
-              <a target="_top" href={mailToLink}>
+              <a
+                target="_top"
+                href={mailToLink}
+                className="button"
+                style={{ fontFamily: 'Arial' }}
+              >
                 Send Message
               </a>
             </li>
             <li>
-              <button onClick={this._resetForm}>Reset </button>
+              <button onClick={this._resetForm}>Reset</button>
             </li>
           </ul>
           <ul className="icons">
